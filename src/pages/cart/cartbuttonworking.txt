@@ -1,0 +1,107 @@
+import React, { useState } from 'react'
+import './cartbutton.css'
+import { useContext } from 'react';
+import { ShopContext } from '../../context/shopContext';
+export default function Cartbuttons(props) {
+
+    var granttotal ;
+
+  const cart = useContext(ShopContext)
+
+    // console.log(props);
+
+    let cartprice=props.addprice
+    let cartqty=props.addqty
+    
+    // console.log(cartprice);
+
+    // console.log(props);
+    // console.log(cartqty);
+
+    const[count,setCount]=useState(cartqty)
+    const [price,setprice]=useState(cartprice)
+    // const[pricearray,setPricearray]=useState([price])
+
+
+    function add(){
+
+let r = count +1
+        setprice(c=>cartprice*r)
+        setCount(cartqty=>cartqty+1)
+
+
+      let v=  cart.cartItem.find((e)=>{
+        return  e.id === props.itemid;
+        })
+        // setPricearray()
+        // console.log(pricearray));
+         console.log(cartprice);
+
+         if(count === 1 ){
+            
+        cart.cartItem.forEach((e)=>{
+          e.newprice = cartprice;
+           v.newprice =v.newprice + cartprice  
+        })}
+
+        else{
+            v.newprice =v.newprice+ cartprice  
+        }
+            
+         
+
+
+//  console.log(v.newprice);
+    red()
+
+    }
+function red(){
+
+    granttotal = cart.cartItem.reduce((total, e)=>{
+        console.log(total.newprice);
+        return total += e.newprice
+     },0)
+     console.log(granttotal)
+}
+
+
+
+
+function reduce(){
+    let r = count -1
+    setCount(cartqty=>cartqty-1)
+    setprice(c=>cartprice*r)
+    
+    
+    // let v=  cart.cartItem.find((e)=>{
+        // return  e.id === props.itemid;
+    // })  
+
+    // v.newprice -= price
+
+    // minus()
+}    
+
+// function minus(){
+//     const m = cart.cartItem.reduce((total, e)=>{
+//         console.log(total.newprice);
+//         return total += e.newprice
+//      },0)
+//      console.log(m)
+// }
+
+  return (
+    <div className='countdiv'>
+        <div className="butn">
+        <button className='countbtn'  onClick={reduce} disabled={count===0}>-</button>
+        <h4 className='countval'>{count}</h4>
+        <button className='countbtn'  onClick={add} >+</button>
+
+        </div>
+
+        <div>
+        <h3 className='total'>Total Price : {price}</h3>
+        </div>
+    </div>
+  )
+}

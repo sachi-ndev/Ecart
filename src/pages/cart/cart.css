@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.strdivc{
+    background-color:rgb(247,244,243);
+    border: 2px solid rgba(149, 146, 146, 0.523);
+    margin: 30px;
+    border-radius: 25px;
+    width: 25rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    justify-content: center;
+    
+}
+.cartleft{ 
+    /* height: 250px; */
+    /* width: 250px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.productsc{
+    display:  grid;
+    grid-template-columns: 28rem 28rem 28rem;
+    grid-template-rows: 38rem 38rem 38rem;
+    gap: 10px;
+}
+
+.shopc{
+    /* height: 90vh; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.proimagec{
+    /* mix-blend-mode: ; */
+    width: 150px;
+}
+.addbtnc{
+    padding: 6px 12px;
+    background-color: rgba(245, 240, 220, 0.525);
+    color: black;
+    border-radius: 25px;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+:hover.addbtnc {
+    color: rgb(247,244,243);
+    background-color: black;
+}
+
+
+.probrandc{
+    font-size: 1.6rem;
+}
+.protextc{
+    margin: 5px;
+    font-family: 'Lucida Sans';
+}
+.probrandc{
+
+    color: coral;
+}

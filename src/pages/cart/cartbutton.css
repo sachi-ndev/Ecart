@@ -1,0 +1,31 @@
+.countdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+
+}
+.countbtn{
+    /* width: 50px; */
+    padding: 10px;
+    background-color: rgba(255, 99, 71, 0.422);
+    border: 1px solid rgba(155, 149, 149, 0.097);
+    border-radius: 20px;
+
+}
+.butn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    background-color: antiquewhite;
+    border-radius: 20px;
+
+    
+}
+
+.total{
+    margin-top: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(255, 0, 0, 0.708);
+}
